@@ -1,0 +1,14 @@
+{% extends 'quotes/base.html' %}
+{% csrf_token %}
+{% block title %}Add Quote{% endblock %}
+
+{% block content %}
+<h1>Add Quote</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Quote</button>
+</form>
+<hr>
+<a href="{% url 'quotes:quote_list' %}">Back to Quotes</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'quotes/base.html' %}
+{% csrf_token %}
+{% block title %}{{ author.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ author.name }}</h1>
+<p>{{ author.bio }}</p>
+<h2>Quotes by {{ author.name }}</h2>
+{% for quote in quotes %}
+    <p>{{ quote.text }}</p>
+{% endfor %}
+<hr>
+<a href="{% url 'quotes:quote_list' %}">Back to Quotes</a>
+{% endblock %}
