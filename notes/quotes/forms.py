@@ -11,3 +11,4 @@ class QuoteForm(ModelForm):
     class Meta:
         model = Quote
         fields = ('text', 'author')
+
